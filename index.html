@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .row{
+            background-image: linear-gradient(rgba(255, 0, 0, 0.768),blue);
+        }
+        .book {
+            width: 400px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+            transform: perspective(800px) rotatey(-40deg);
+            transition: 1s;
+            transform-style: preserve-3d;
+            transition-delay: 0.2s;
+            
+            
+
+
+
+            &::after {
+                content: '';
+                width: 100px;
+                height: 100%;
+                background-color: rgb(0, 0, 0);
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform-origin: right;
+                transform: rotatey(-90deg);
+            }
+
+            &:hover {
+                transform: perspective(800px)  rotatey(-130deg);
+            }
+
+            >img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+
+              
+
+                 &:nth-of-type(2) {
+                    transform: translatez(-100px);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body class="row">
+    <div class="book">
+        <img src="1 image.jfif" alt="">
+        <img src="2 image.jfif" alt="">
+    </div>
+</body>
+
+</html>
